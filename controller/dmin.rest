@@ -1,15 +1,19 @@
-### //Buat Super
+### //Buat user
 POST http://localhost:5022/user
 Content-Type: application/json
 
 {
-    "Nama" : "Lansia", 
-    "nama_penyakit" : "mengantuk", 
-    "usia" : "66", 
-    "Username" : "lansia", 
+    "Nama" : "orang tua", 
+    "nama_penyakit" : "sesak baju", 
+    "usia" : "61", 
+    "Username" : "orang", 
     "Password" : "123456", 
     "confPassword" : "123456"
 }
+
+
+### //get semua user
+GET http://localhost:5022/user
 
 ### //Login
 
@@ -17,23 +21,26 @@ POST http://localhost:5022/login
 Content-Type: application/json
 
 {
-"Username" : "bibi", 
+"Username" : "lansia", 
 "Password" : "123456" 
 }
 
-###
-
-POST http://localhost:5022/kuisioner
-Content-Type: application/json
-
-{
-    "LinkKui" : "uriadutu"
-}
 ###
 GET http://localhost:5022/me
 
 ###
 DELETE http://localhost:5022/logout
 
-###
-GET http://localhost:5022/admin
+###  // get keterangan
+GET http://localhost:5022/keterangan/user/1
+
+### // buat keterangan
+POST http://localhost:5022/keterangan
+Content-Type: application/json
+
+{
+    "id_user" : "2", 
+    "tanggal" : "12-02-2024", 
+    "jam" : "90", 
+    "keterangan" : "minum"
+}

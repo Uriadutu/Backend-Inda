@@ -1,4 +1,5 @@
 import Keterangan from "../models/KeteranganModels.js";
+import User from "../models/UserModels.js";
 
 export const getKeterangan = async (req, res)=> {
     try {
@@ -14,7 +15,8 @@ export const getKeteranganById = async (req, res) => {
         const response = await Keterangan.findAll({
             where : {
                 id_keterangan : req.params.id
-            }
+            },
+            
         });
         res.status(201).json(response);
     } catch (error) {
@@ -27,7 +29,13 @@ export const getKeteranganByUser = async (req, res) => {
         const response = await Keterangan.findAll({
             where : {
                 id_user : req.params.id
-            }
+            }, 
+            include : [
+                {
+                    model : User,
+                    attributes : ["Nama", "usia", "nama_penyakit"]
+                }
+            ]
         });
         res.status(201).json(response);
     } catch (error) {
