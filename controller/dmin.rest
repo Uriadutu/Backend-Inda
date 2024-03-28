@@ -1,0 +1,39 @@
+### //Buat Super
+POST http://localhost:5022/user
+Content-Type: application/json
+
+{
+    "Nama" : "Lansia", 
+    "nama_penyakit" : "mengantuk", 
+    "usia" : "66", 
+    "Username" : "lansia", 
+    "Password" : "123456", 
+    "confPassword" : "123456"
+}
+
+### //Login
+
+POST http://localhost:5022/login
+Content-Type: application/json
+
+{
+"Username" : "bibi", 
+"Password" : "123456" 
+}
+
+###
+
+POST http://localhost:5022/kuisioner
+Content-Type: application/json
+
+{
+    "LinkKui" : "uriadutu"
+}
+###
+GET http://localhost:5022/me
+
+###
+DELETE http://localhost:5022/logout
+
+###
+GET http://localhost:5022/admin
