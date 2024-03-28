@@ -33,7 +33,7 @@ export const getKeteranganByUser = async (req, res) => {
             include : [
                 {
                     model : User,
-                    attributes : ["Nama", "usia", "nama_penyakit"]
+                    attributes : ["Nama", "Tanggal_Lahir", "nama_penyakit"]
                 }
             ]
         });

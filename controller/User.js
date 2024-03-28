@@ -24,7 +24,7 @@ export const getUserbyId = async (req, res)=> {
 }
 
 export const createUser = async (req, res) => {
-  const { Nama, Username, nama_penyakit, usia, Password, confPassword } = req.body;
+  const { Nama, Username, nama_penyakit, Tanggal_Lahir, Password, confPassword } = req.body;
   if (Password !== confPassword)
     return res
       .status(400)
@@ -34,7 +34,7 @@ export const createUser = async (req, res) => {
     await User.create({
       Nama: Nama,
       nama_penyakit : nama_penyakit,
-      usia : usia,
+      Tanggal_Lahir : Tanggal_Lahir,
       Username: Username,
       Password: hashPassword,
     });

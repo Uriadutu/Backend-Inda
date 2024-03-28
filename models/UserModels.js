@@ -29,7 +29,7 @@ const User = db.define(
         notEmpty: true,
       },
     },
-    usia: {
+    Tanggal_Lahir: {
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
